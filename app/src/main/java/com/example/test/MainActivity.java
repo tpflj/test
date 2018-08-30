@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         byte[] bytes2 = new byte[20];
         bytes = "hinihao".getBytes();
         System.arraycopy(bytes,2,bytes2,0,2);
-        Log.i(TAG, "onCreate11111: "+ new String(bytes2) + "  "+bytes.length);
+
+        Log.e(TAG, "onCreate: 3333333" );
     }
 
     @Override
