@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.content.res.Configuration;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,19 +14,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+//
+//        Button btn = (Button) findViewById(R.id.btn);
+//        btn.setOnClickListener(this);
+//
+//        byte[] bytes = new byte[20];
+//        byte[] bytes2 = new byte[20];
+//        bytes = "hinihao".getBytes();
+//        System.arraycopy(bytes,2,bytes2,0,2);
+//
+//        Log.e(TAG, "onCreate: 3333333           " );
+//        Log.i(TAG, "onCreate11111: "+ new String(bytes2) + "  "+bytes.length);
+//        Log.i(TAG, "onCreate22222: "+ new String(bytes2) + "  "+bytes.length);
 
-        Button btn = (Button) findViewById(R.id.btn);
-        btn.setOnClickListener(this);
+        setContentView(new MySurfaceView(this));
+    }
 
-        byte[] bytes = new byte[20];
-        byte[] bytes2 = new byte[20];
-        bytes = "hinihao".getBytes();
-        System.arraycopy(bytes,2,bytes2,0,2);
-
-        Log.e(TAG, "onCreate: 3333333" );
-        Log.i(TAG, "onCreate11111: "+ new String(bytes2) + "  "+bytes.length);
-        Log.i(TAG, "onCreate22222: "+ new String(bytes2) + "  "+bytes.length);
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     @Override
